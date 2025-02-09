@@ -1,0 +1,113 @@
+/* ==============================
+   🎨 Estilos da Página de Cadastro
+   ============================== */
+   body {
+    font-family: Arial, sans-serif;
+    background-color: #707070; /* Cinza escuro de fundo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Container */
+.signup-container {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 400px;
+    position: relative;
+}
+
+/* Fechar Modal */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Título */
+h2 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #333;
+}
+
+/* Formulário */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+label {
+    text-align: left;
+    font-size: 14px;
+    color: #555;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+/* Erro nos campos */
+input.error {
+    border: 2px solid red;
+    background-color: rgba(255, 0, 0, 0.1);
+}
+
+/* Campos corretos */
+input.valid {
+    border: 2px solid green;
+    background-color: rgba(0, 255, 0, 0.1);
+}
+
+/* Mensagem de erro */
+.error-message {
+    display: none;
+    color: red;
+    font-size: 12px;
+    text-align: left;
+}
+
+/* Data de nascimento */
+.birthdate {
+    display: flex;
+    gap: 5px;
+}
+
+select {
+    flex: 1;
+}
+
+/* Botão */
+.btn-signup {
+    background-color: #1d9bf0;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.btn-signup:enabled {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.btn-signup:hover:enabled {
+    background-color: #0077cc;
+}
