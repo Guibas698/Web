@@ -74,3 +74,62 @@ document.addEventListener("DOMContentLoaded", function () {
         updateCounter(modalInput, modalCounter, modalSendBtn);
     });
 });
+
+
+//login
+document.addEventListener("DOMContentLoaded", function () {
+    const emailInput = document.getElementById("email");
+    const passwordInput = document.getElementById("password");
+    const loginBtn = document.getElementById("login-btn");
+    const emailError = document.getElementById("email-error");
+
+    function validateForm() {
+        const emailValid = emailInput.value.includes("@") && emailInput.value.includes(".");
+        const passwordValid = passwordInput.value.trim().length > 0;
+
+        if (!emailValid) {
+            emailInput.classList.add("error");
+            emailError.style.display = "block";
+            loginBtn.disabled = true;
+        } else {
+            emailInput.classList.remove("error");
+            emailInput.classList.add("valid");
+            emailError.style.display = "none";
+        }
+
+        
+        loginBtn.disabled = !(emailValid && passwordValid);
+    }
+
+    
+    emailInput.addEventListener("input", validateForm);
+    passwordInput.addEventListener("input", validateForm);
+});
+
+
+//register
+document.addEventListener("DOMContentLoaded", function () {
+    const nameInput = document.getElementById("name");
+    const emailInput = document.getElementById("email");
+    const passwordInput = document.getElementById("password");
+    const confirmPasswordInput = document.getElementById("confirm-password");
+    const signupBtn = document.getElementById("signup-btn");
+    const agreeYes = document.getElementById("agree-yes");
+
+    function validateForm() {
+        const nameValid = nameInput.value.trim().length > 0;
+        const emailValid = emailInput.value.includes("@") && emailInput.value.includes(".");
+        const passwordValid = passwordInput.value.length >= 6;
+        const passwordsMatch = passwordInput.value === confirmPasswordInput.value;
+        const termsAccepted = agreeYes.checked;
+
+        signupBtn.disabled = !(nameValid && emailValid && passwordValid && passwordsMatch && termsAccepted);
+    }
+
+    nameInput.addEventListener("input", validateForm);
+    emailInput.addEventListener("input", validateForm);
+    passwordInput.addEventListener("input", validateForm);
+    confirmPasswordInput.addEventListener("input", validateForm);
+    agreeYes.addEventListener("change", validateForm);
+});
+
