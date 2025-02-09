@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar Conta | Tzeet</title>
+    <link rel="stylesheet" href="singupStyle.css">
+    <script src="script.js"></script>
+</head>
+<body>
+
+    <div class="signup-container">
+        <span class="close" onclick="window.location.href='login.html'">&times;</span>
+        <h2>Criar conta</h2>
+
+        <form id="signup-form">
+            <label for="name">Nome:</label>
+            <input type="text" id="name" required>
+            <span class="error-message" id="name-error">Por favor, informe um nome de usuário.</span>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+            <span class="error-message" id="email-error">Informe um email válido.</span>
+
+            <label for="password">Senha:</label>
+            <input type="password" id="password" required minlength="6">
+            <span class="error-message" id="password-error">A senha é obrigatória e deve ter pelo menos 6 caracteres.</span>
+
+            <label for="confirm-password">Confirmação da senha:</label>
+            <input type="password" id="confirm-password" required>
+            <span class="error-message" id="confirm-password-error">As senhas não coincidem.</span>
+
+            <label>Data de nascimento</label>
+            <p class="info-text">Isso não será exibido publicamente. Confirme sua própria idade.</p>
+
+            <div class="birthdate">
+                <select id="month" required>
+                    <option value="">Mês</option>
+                    <option value="1">Janeiro</option>
+                    <option value="2">Fevereiro</option>
+                    <option value="3">Março</option>
+                    <option value="4">Abril</option>
+                    <option value="5">Maio</option>
+                    <option value="6">Junho</option>
+                    <option value="7">Julho</option>
+                    <option value="8">Agosto</option>
+                    <option value="9">Setembro</option>
+                    <option value="10">Outubro</option>
+                    <option value="11">Novembro</option>
+                    <option value="12">Dezembro</option>
+                </select>
+
+                <select id="day" required>
+                    <option value="">Dia</option>
+                </select>
+
+                <select id="year" required>
+                    <option value="">Ano</option>
+                </select>
+            </div>
+
+            <span class="error-message" id="birthdate-error">Por favor, selecione uma data válida.</span>
+
+            <label>
+                <input type="checkbox" id="email-updates">
+                Receba e-mails sobre sua atividade e recomendações.
+            </label>
+
+            <label>Você concorda com nossos Termos, Política de Privacidade e Uso de Cookies?</label>
+            <div class="terms">
+                <input type="radio" id="agree-yes" name="terms" value="yes" required>
+                <label for="agree-yes">Sim</label>
+                <input type="radio" id="agree-no" name="terms" value="no">
+                <label for="agree-no">Não</label>
+            </div>
+
+            <button type="submit" id="signup-btn" class="btn-signup" disabled>Se inscrever</button>
+        </form>
+    </div>
+
+</body>
+</html>
